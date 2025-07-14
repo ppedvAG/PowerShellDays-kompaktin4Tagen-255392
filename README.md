@@ -28,3 +28,4 @@ KursRepository zu Kurs PowerShell Days - kompakt in 4 Tagen der ppedv AG
     - Aufbau Verb-Noun
 - Module
 - Variablen
+- Operationen
