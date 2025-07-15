@@ -1,12 +1,9 @@
 # PowerShellDays-kompaktin4Tagen-255392
 KursRepository zu Kurs PowerShell Days - kompakt in 4 Tagen der ppedv AG
 
-[Kursblatt 1. Teil](https://ppedv.de/schulung/kurse/PowershellAdministrationWindowslWMIActiveDirectoryIIS7cmdletspipelinesPs1Skripte?affid=PNXYL)
-
-[Kursblatt 2. Teil](https://ppedv.de/schulung/kurse/PowerShellCorecmdletScriptlernenFortgeschrittenWorkflowProgrammierungSeminarTraining?affid=PNXYL )
-
 [Kursblatt PowerDays](https://ppedv.de/schulung/kurse/WindowsPowerShellCorecmdletScriptWMIlernenFortgeschrittenWorkflowProgrammierungSeminarTraining?affid=PNXYL )
 
+[Kursblatt 1. Teil](https://ppedv.de/schulung/kurse/PowershellAdministrationWindowslWMIActiveDirectoryIIS7cmdletspipelinesPs1Skripte?affid=PNXYL)
 ### Agenda:
 - Einführung
     - PowerShell Versionen
@@ -51,3 +48,7 @@ KursRepository zu Kurs PowerShell Days - kompakt in 4 Tagen der ppedv AG
 - Aufzählen
 - Schleifen
 - Verzweigung
+- Pipeline2
+- Variablen2
+
+[Kursblatt 2. Teil](https://ppedv.de/schulung/kurse/PowerShellCorecmdletScriptlernenFortgeschrittenWorkflowProgrammierungSeminarTraining?affid=PNXYL )
