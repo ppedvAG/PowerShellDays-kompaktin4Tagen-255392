@@ -50,5 +50,10 @@ KursRepository zu Kurs PowerShell Days - kompakt in 4 Tagen der ppedv AG
 - Verzweigung
 - Pipeline2
 - Variablen2
+- Skriptsicherheit
+- Scripting
+    - Parameter
+    - Parametervalidierung
+    
 
 [Kursblatt 2. Teil](https://ppedv.de/schulung/kurse/PowerShellCorecmdletScriptlernenFortgeschrittenWorkflowProgrammierungSeminarTraining?affid=PNXYL )
