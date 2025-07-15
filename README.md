@@ -45,3 +45,4 @@ KursRepository zu Kurs PowerShell Days - kompakt in 4 Tagen der ppedv AG
 - PipeLine1
 - Sortieren 
 - Messen
+- Selektieren
