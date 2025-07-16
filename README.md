@@ -62,3 +62,4 @@ KursRepository zu Kurs PowerShell Days - kompakt in 4 Tagen der ppedv AG
 - Git
 - Verbose
 - Debug
+- Comment Based Help
