@@ -10,8 +10,24 @@
 [int]$DirCount = 5,
 
 [Validatelength(1,20)]
-[string]$DirName = "TestFiles2"
+[string]$DirName = "TestFiles2",
+
+[switch]$Force
 )
+
+$TestDirPath = Join-Path -Path $Path -ChildPath $DirName
+
+if(Test-Path -Path $TestDirPath -PathType Container)
+{ #Prüfen ob Ordner vorhanden ansonsten warnung oder löschen bei force
+    if($force)
+    {
+        Remove-Item -Path $TestDirPath -Force -Recurse
+    }
+    else
+    {
+        Write-Error -ErrorAction Stop -Message "Ordner bereits vorhanden" -TargetObject (Get-Item -Path $TestDirPath)
+    }
+}
 
 $TestFilesDir = New-Item -Path $Path -Name $DirName -ItemType Directory
 
