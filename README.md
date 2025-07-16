@@ -63,3 +63,8 @@ KursRepository zu Kurs PowerShell Days - kompakt in 4 Tagen der ppedv AG
 - Verbose
 - Debug
 - Comment Based Help
+- Validates
+    - Validatelength
+    - ValidateRange
+    - ValidatePattern
+    - ValidateScript
