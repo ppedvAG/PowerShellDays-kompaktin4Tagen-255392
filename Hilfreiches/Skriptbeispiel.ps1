@@ -1,6 +1,4 @@
-﻿# Dieses Skript liest bestimmte Security-Events aus dem Windows-Eventlog aus.
-# Es kann lokal oder auf einem entfernten Computer ausgeführt werden.
-
+﻿[cmdletBinding()]
 param(
     # Pflichtparameter: EventId muss angegeben werden und darf nur 4624, 4625 oder 4634 sein.
     [Parameter(Mandatory=$true)]
@@ -16,6 +14,14 @@ param(
     [ValidateScript({Test-NetConnection -ComputerName $PSItem -CommonTcpPort WinRm -InformationLevel Quiet})]
     [string]$computername = "localhost"
 )
+
+Write-Verbose -Message "Zusätzliche optionale Ausgaben"
+Write-Verbose -Message "Vom User wurden folgende Werte übergeben"
+Write-Verbose -Message "EventId: $EventId"
+Write-Verbose -Message "Newest: $Newest"
+Write-Verbose -Message "Computername: $computername"
+
+Write-Debug -Message "Vor der Abfrage"
 
 # Holt die Security-Events vom angegebenen Computer, filtert nach EventId und gibt die neuesten Einträge aus.
 Get-WinEvent -LogName Security -ComputerName $computername | Where-Object Id -eq $EventId | Select-Object -First $Newest

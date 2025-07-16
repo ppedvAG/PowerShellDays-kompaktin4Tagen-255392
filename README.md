@@ -60,3 +60,5 @@ KursRepository zu Kurs PowerShell Days - kompakt in 4 Tagen der ppedv AG
 
 ### Agenda Teil 2:
 - Git
+- Verbose
+- Debug
