@@ -57,3 +57,6 @@ KursRepository zu Kurs PowerShell Days - kompakt in 4 Tagen der ppedv AG
     
 
 [Kursblatt 2. Teil](https://ppedv.de/schulung/kurse/PowerShellCorecmdletScriptlernenFortgeschrittenWorkflowProgrammierungSeminarTraining?affid=PNXYL )
+
+### Agenda Teil 2:
+- Git
