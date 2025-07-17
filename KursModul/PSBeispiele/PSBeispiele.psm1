@@ -109,3 +109,63 @@ Write-Host -Object $Input2
 Write-Host -Object $Input3
 
 }
+
+function Test-PositionalBinding
+{
+<#
+.SYNOPSIS
+    Test PositionalBinding
+.DESCRIPTION
+    Test- 
+#>
+[cmdletBinding(PositionalBinding = $false)]
+param(
+    $input1,
+    [Parameter(Position=1)]
+    $input2,
+    [Parameter(Position=2)]
+    $input3
+)
+
+Write-Host -Object $Input1 
+Write-Host -Object $Input2
+Write-Host -Object $Input3
+}
+
+function Test-ConfirmImpact
+{#Todo
+[cmdletBinding(SupportsShouldProcess,ConfirmImpact="High")]
+param(
+[Parameter(Mandatory=$true,ValueFromPipeline=$true)]
+[string]$Name
+)
+Write-Host -Object $Name
+}
+
+
+function Test-Remaining
+{
+[cmdletBinding()]
+param(
+    [Parameter(Mandatory= $true, ValueFromPipeLine = $true, ValueFromPipelineByPropertyName = $true)]
+    [Alias("Bezeichnung")]
+    [string]$Name,
+
+    [Parameter(ValueFromRemainingArguments = $true)]
+    [string[]]$Remaining
+)
+    Write-Verbose -Message "Habe verbleibend Elemente gefunden $($Remaining.Count)"
+    $Remaining | ForEach-Object -Process {$PSItem}
+
+}
+
+function Test-CredentialParam
+{
+    [cmdletBinding()]
+    param(
+    [ValidateNotNull()]
+    [System.Management.Automation.PSCredential]
+    [System.Management.Automation.Credential()]
+    $Credential
+    )
+}

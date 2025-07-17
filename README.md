@@ -75,3 +75,8 @@ KursRepository zu Kurs PowerShell Days - kompakt in 4 Tagen der ppedv AG
     - ModuleManifest
 - Pipelinefähigkeit
 - Beginn Process End
+- ParameterSet
+- PositionalBinding
+- Advanced Parameter
+- cmdletBinding
+- Credential als Parameter
