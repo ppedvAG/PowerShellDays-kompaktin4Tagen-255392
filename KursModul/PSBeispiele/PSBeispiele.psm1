@@ -41,3 +41,48 @@ End
 
 
 }
+
+function Get-StringStats
+{
+[cmdletBinding()]
+param(
+    [Parameter(ValueFromPipeLine = $true)]
+    [Validatelength(0,2147483647)]
+    [string]$InputObject
+)
+
+    Begin
+    {
+        [double]$WortCount = 0
+        [double]$ZeichenCount = 0
+        [double]$LineCount = 0
+
+        [double]$GesamtWortCount = 0
+        [double]$GesamtZeichenCount = 0
+    }
+    Process
+    {
+        $LineCount ++
+        $ZeichenCount = $InputObject.Replace(" ","").Length;
+        if($ZeichenCount -gt 0)
+        {
+            $WortCount = $InputObject.Split(" ").Count 
+        }
+        else
+        {
+            $WortCount = 0
+        }
+        "Input$LineCount : Zeichen: $ZeichenCount Wörter: $WortCount"
+
+        $GesamtWortCount += $WortCount
+        $GesamtZeichenCount += $ZeichenCount
+    }
+    End
+    {
+        "Zusammenfassung:"
+        "Zeilen: $Linecount"
+        "Gesamt Wörter: $GesamtWortCount"
+        "Gesamt Zeichen $GesamtZeichenCount"
+    }
+
+}
