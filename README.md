@@ -70,5 +70,8 @@ KursRepository zu Kurs PowerShell Days - kompakt in 4 Tagen der ppedv AG
     - ValidateScript
 - Scripting
     - Functions
+    - Tips
 - Skript Module
     - ModuleManifest
+- Pipelinefähigkeit
+- Beginn Process End
