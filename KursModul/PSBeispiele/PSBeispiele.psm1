@@ -53,36 +53,51 @@ param(
 
     Begin
     {
+        class LineStringStat
+        {
+            [double]$LineNr
+            [double]$WortCount
+            [double]$ZeichenCount
+        }
+        class StringStat
+        {
+            [LineStringStat[]]$lines
+            [double]$GesamtWortCount
+            [double]$GesamtZeichenCount
+        }
+        [double]$LineCount = 0
+        <#
         [double]$WortCount = 0
         [double]$ZeichenCount = 0
-        [double]$LineCount = 0
 
         [double]$GesamtWortCount = 0
         [double]$GesamtZeichenCount = 0
+        #>
+
+        $Ausgabe = [StringStat]::new()
     }
     Process
     {
         $LineCount ++
-        $ZeichenCount = $InputObject.Replace(" ","").Length;
-        if($ZeichenCount -gt 0)
+        $Line = [LineStringStat]::new()
+        $Line.LineNr = $LineCount
+        
+        $Line.Zeichencount = $InputObject.Replace(" ","").Length;
+        if( $Line.Zeichencount -gt 0)
         {
-            $WortCount = $InputObject.Split(" ").Count 
+            $Line.WortCount = $InputObject.Split(" ").Count 
         }
         else
         {
-            $WortCount = 0
+            $Line.WortCount = 0
         }
-        "Input$LineCount : Zeichen: $ZeichenCount Wörter: $WortCount"
-
-        $GesamtWortCount += $WortCount
-        $GesamtZeichenCount += $ZeichenCount
+        $Ausgabe.lines += $Line
+        $Ausgabe.GesamtWortCount += $Line.WortCount
+        $Ausgabe.GesamtZeichenCount += $Line.Zeichencount
     }
     End
     {
-        "Zusammenfassung:"
-        "Zeilen: $Linecount"
-        "Gesamt Wörter: $GesamtWortCount"
-        "Gesamt Zeichen $GesamtZeichenCount"
+        $Ausgabe
     }
 
 }
