@@ -80,3 +80,5 @@ KursRepository zu Kurs PowerShell Days - kompakt in 4 Tagen der ppedv AG
 - Advanced Parameter
 - cmdletBinding
 - Credential als Parameter
+- DSC
+- DSC with ConfigurationData
