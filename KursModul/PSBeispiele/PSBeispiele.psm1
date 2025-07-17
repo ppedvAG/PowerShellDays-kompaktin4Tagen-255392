@@ -86,3 +86,26 @@ param(
     }
 
 }
+
+function Test-ParameterSet
+{
+#Die Eigenschaft DaufaltparameterSetName im cmdletBinding setzt das Default ParameterSet, das die PowerShell weiß von welchem Set standardmäßig die Mandatory abgefragt werden müssen wenn kein Parameter angegeben wurde
+[cmdletBinding(DefaultParameterSetName="Set1")]
+param(
+    [Parameter(ParameterSetName="Set1", Mandatory=$true)]
+    [string]$Input1,
+
+    [Parameter(ParameterSetName="Set2", Mandatory=$true)]
+    [string]$Input2,
+
+    [Parameter(ParameterSetName="Set1", Mandatory=$false)]
+    [Parameter(ParameterSetName="Set2", Mandatory=$true)]
+    [string]$Input3
+)
+# $PSCmdlet.ParameterSetName beeinhaltet das verwendete ParameterSet
+Write-Host -Object "ParametersetName: $($PSCmdlet.ParameterSetName)"
+Write-Host -Object $Input1 
+Write-Host -Object $Input2
+Write-Host -Object $Input3
+
+}
