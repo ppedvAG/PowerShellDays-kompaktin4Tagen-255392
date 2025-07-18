@@ -73,6 +73,10 @@ KursRepository zu Kurs PowerShell Days - kompakt in 4 Tagen der ppedv AG
     - Tips
 - Skript Module
     - ModuleManifest
+- Fehlerbehandlung
+    - Try/Catch/Finally
+    - ErrorAction
+    - ErrorVariable
 - Pipelinefähigkeit
 - Beginn Process End
 - ParameterSet
@@ -84,3 +88,5 @@ KursRepository zu Kurs PowerShell Days - kompakt in 4 Tagen der ppedv AG
 - DSC with ConfigurationData
 - Class
 - Enum
+- .Net Assemblies in PowerShell nutzen
+  - System.Speech
